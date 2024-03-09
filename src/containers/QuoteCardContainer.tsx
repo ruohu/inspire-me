@@ -6,9 +6,13 @@ import QuoteCard from '../components/QuoteCard';
 
 type Props = {
   quote: Quote;
+  enableNote?: boolean;
 }
 
-const QuoteCardContainer: FC<Props> = ({ quote }) => {
+const QuoteCardContainer: FC<Props> = ({
+  quote,
+  enableNote = false
+}) => {
   const { favorites } = useQuotes();
   const dispatch = useQuotesDispatch();
   const [openCopySnackbar, setOpenCopySnackbar] = useState<boolean>(false);
@@ -16,7 +20,7 @@ const QuoteCardContainer: FC<Props> = ({ quote }) => {
 
   useEffect(() => {
     setIsFavorite((favorites.find((favorite) => favorite.id === quote?.id) ? true : false));
-  }, [favorites]);
+  }, [quote.id, favorites]);
 
   const addFavorite = (quote: Quote) => {
     dispatch({
@@ -46,6 +50,7 @@ const QuoteCardContainer: FC<Props> = ({ quote }) => {
       quote={quote}
       isFavorite={isFavorite}
       openSnackbar={openCopySnackbar}
+      enableNote={enableNote}
       addFavorite={addFavorite}
       removeFavorite={removeFavorite}
       handleCopyClick={handleCopyClick}

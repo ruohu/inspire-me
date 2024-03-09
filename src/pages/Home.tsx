@@ -2,14 +2,14 @@
 import { FC } from "react";
 import RandomQuoteContainer from "../containers/RandomQuoteContainer";
 import { Container } from "@mui/material";
-import Favorites from "../components/Favorites";
+import FavoritesContainer from "../containers/FavoritesContainer";
 
 const Home: FC = () => {
 
   return (
     <Container>
       <RandomQuoteContainer />
-      <Favorites />
+      <FavoritesContainer />
     </Container>
 
   )

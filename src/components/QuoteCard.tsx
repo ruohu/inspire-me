@@ -4,11 +4,13 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteFilledIcon from '@mui/icons-material/Favorite';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { Quote } from "../models/types/Quote";
+import CardNoteContainer from "../containers/CardNoteContainer";
 
 type Props = {
   quote: Quote;
   isFavorite: boolean;
   openSnackbar: boolean;
+  enableNote?: boolean;
   addFavorite: (quote: Quote) => void;
   removeFavorite: (id: string) => void;
   handleCopyClick: (content: string, author: string) => void;
@@ -19,6 +21,7 @@ const QuoteCard: FC<Props> = ({
   quote,
   isFavorite,
   openSnackbar,
+  enableNote = false,
   addFavorite,
   removeFavorite,
   handleCopyClick,
@@ -26,7 +29,7 @@ const QuoteCard: FC<Props> = ({
 }) => {
 
   return (
-    <Card>
+    <Card style={{ height: "100%", maxHeight: "300px" }}>
       <CardContent>
         <Typography variant="body1" component="div">
           {quote.content}
@@ -34,7 +37,7 @@ const QuoteCard: FC<Props> = ({
         <Typography variant="subtitle2" color="textSecondary" gutterBottom>
           - {quote.author}
         </Typography>
-        <CardActions sx={{ justifyContent: 'flex-end' }}>
+        <CardActions sx={{ justifyContent: "flex-end" }}>
           {!isFavorite
             ? <Tooltip title="Add to Favorites">
               <IconButton aria-label="add to favorites" onClick={() => addFavorite(quote)}>
@@ -52,6 +55,7 @@ const QuoteCard: FC<Props> = ({
               <ContentCopyIcon></ContentCopyIcon>
             </IconButton>
           </Tooltip>
+
           <Snackbar
             open={openSnackbar}
             onClose={handleCloseSnackbar}
@@ -60,6 +64,9 @@ const QuoteCard: FC<Props> = ({
             message="Copied to clipboard!"
           />
         </CardActions>
+        {enableNote
+          && <CardNoteContainer quoteId={quote.id} />
+        }
       </CardContent>
     </Card>
 

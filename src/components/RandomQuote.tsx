@@ -12,7 +12,7 @@ const RandomQuote: FC<Props> = ({ quote, refetch }) => {
 
   return (
     <>
-      <Box style={{ height: '100vh' }}>
+      <Box style={{ height: "100vh" }}>
         <Typography>Random Quote</Typography>
         {quote &&
           <QuoteCardContainer quote={quote} />
