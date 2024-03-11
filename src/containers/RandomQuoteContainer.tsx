@@ -18,7 +18,6 @@ const RandomQuoteContainer: FC = () => {
         content: data.content,
         author: data.author,
         tags: data.tags,
-        note: ""
       });
     }
   }, [data]);
