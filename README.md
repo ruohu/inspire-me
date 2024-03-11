@@ -24,7 +24,7 @@
 
 ## About The Project
 
-A simple React application that generate random quotes and allows users to add their favorites quotes.
+A small React application that generate random quotes and allows users to add their favorites quotes.
 
 ### Built With
 
@@ -55,9 +55,13 @@ You can install the latest version of npm from your terminal with the following 
    ```sh
     npm install
    ```
-3. Run the app
+3. Build the app
    ```sh
-    npm run dev
+    npm run build
+   ```
+4. Run the app
+   ```sh
+    npm run preview
    ```
 
 
