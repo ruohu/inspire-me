@@ -83,8 +83,6 @@ const QuoteCard: FC<Props> = ({
         }
       </CardContent >
     </Card >
-
-
   )
 }
 

@@ -8,10 +8,7 @@ const FavoritesContainer: FC = () => {
   const state: QuotesState = useQuotes();
 
   return (
-    <>
-      <Favorites favorites={state.favorites} />
-    </>
-
+    <Favorites favorites={state.favorites} />
   )
 }
 
