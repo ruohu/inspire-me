@@ -1,5 +1,4 @@
-import { Textarea } from '@mui/joy';
-import { Box, IconButton, Tooltip, Typography } from '@mui/material'
+import { Box, IconButton, TextField, Tooltip } from '@mui/material'
 import EditIcon from '@mui/icons-material/Edit';
 import DoneIcon from '@mui/icons-material/Done';
 import { ChangeEvent, FC } from 'react';
@@ -21,13 +20,11 @@ const CardNote: FC<Props> = ({
 }) => {
 
   return (
-    <Box>
-      <Typography>My note</Typography>
-      <Textarea
-        color="neutral"
-        minRows={2}
-        size="md"
-        variant="outlined"
+    <Box sx={{ maxWidth: "100%" }}>
+      <TextField
+        sx={{ width: "95%" }}
+        label="My note"
+        multiline
         value={note}
         onChange={(e: ChangeEvent<HTMLTextAreaElement>) => { setNote(e.target.value) }}
         disabled={!isEditing}

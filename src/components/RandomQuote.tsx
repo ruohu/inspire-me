@@ -12,12 +12,24 @@ const RandomQuote: FC<Props> = ({ quote, refetch }) => {
 
   return (
     <>
-      <Box style={{ height: "100vh" }}>
-        <Typography>Random Quote</Typography>
-        {quote &&
-          <QuoteCardContainer quote={quote} />
-        }
-        <Button variant="contained" disableElevation
+      <Box sx={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center"
+      }}>
+        <Typography variant="h2">Random Quote</Typography>
+        <Box sx={{ p: 2 }}>
+          {quote &&
+            <QuoteCardContainer quote={quote} />
+          }
+        </Box>
+        <Button
+          variant="contained"
+          sx={{ my: 2 }}
+          disableElevation
           onClick={() => refetch()}
         >
           Another One!

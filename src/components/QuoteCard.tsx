@@ -29,15 +29,24 @@ const QuoteCard: FC<Props> = ({
 }) => {
 
   return (
-    <Card style={{ height: "100%", maxHeight: "300px" }}>
-      <CardContent>
-        <Typography variant="body1" component="div">
+    <Card sx={{
+      height: "100%",
+      p: 2,
+      textAlign: "center",
+      display: "flex"
+    }}>
+      <CardContent sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-around"
+      }}>
+        <Typography variant="body1" sx={{ mb: 1 }}>
           {quote.content}
         </Typography>
-        <Typography variant="subtitle2" color="textSecondary" gutterBottom>
+        <Typography variant="body2" color="textSecondary" gutterBottom>
           - {quote.author}
         </Typography>
-        <CardActions sx={{ justifyContent: "flex-end" }}>
+        <CardActions sx={{ display: "flex", justifyContent: "flex-end" }}>
           {!isFavorite
             ? <Tooltip title="Add to Favorites">
               <IconButton aria-label="add to favorites" onClick={() => addFavorite(quote)}>
@@ -64,11 +73,12 @@ const QuoteCard: FC<Props> = ({
             message="Copied to clipboard!"
           />
         </CardActions>
-        {enableNote
+        {
+          enableNote
           && <CardNoteContainer quoteId={quote.id} />
         }
-      </CardContent>
-    </Card>
+      </CardContent >
+    </Card >
 
 
   )

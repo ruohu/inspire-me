@@ -7,7 +7,12 @@ interface IErrorMessageProps {
 
 const ErrorMessage: FC<IErrorMessageProps> = ({ message }) => {
   return (
-    <Box>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}>
       <Typography>{message ?? "An error occured..."}</Typography>
     </Box>
   )

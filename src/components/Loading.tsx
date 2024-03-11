@@ -1,11 +1,17 @@
 import { FC } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, CircularProgress, Typography } from "@mui/material";
 
 
 const Loading: FC = () => {
   return (
-    <Box>
-      <Typography>Loading...</Typography>
+    <Box sx={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+    >
+      <Typography>loading...</Typography>
+      <CircularProgress sx={{ m: 2 }} />
     </Box>
   )
 };
