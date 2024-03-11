@@ -1,4 +1,5 @@
 import { QuotesActionType } from "../models/enums/QuoteActionsType";
+import { Quote } from "../models/types/Quote";
 import { QuotesAction } from "../models/types/QuotesAction";
 import { QuotesState } from "../models/types/QuotesState";
 
@@ -8,9 +9,7 @@ export const initialState: QuotesState = {
   totFavorites: 0
 }
 
-export const quoteReducer = (state: QuotesState = initialState, action: QuotesAction): any => {
-  console.log("state", state);
-  console.log("action", action);
+export const quoteReducer = (state: QuotesState = initialState, action: QuotesAction): QuotesState => {
   switch (action.type) {
     case QuotesActionType.AddFavorite:
       return {
@@ -21,13 +20,13 @@ export const quoteReducer = (state: QuotesState = initialState, action: QuotesAc
     case QuotesActionType.RemoveFavorite:
       return {
         ...state,
-        favorites: state.favorites.filter((favorite) => favorite.id !== action.payload),
+        favorites: state.favorites.filter((favorite: Quote) => favorite.id !== action.payload),
         totFavorites: state.totFavorites - 1
       };
     case QuotesActionType.AddNote:
       return {
         ...state,
-        favorites: state.favorites.map((favorite) =>
+        favorites: state.favorites.map((favorite: Quote) =>
           favorite.id === action.payload.quoteId ? { ...favorite, note: action.payload.note } : favorite
         ),
       }

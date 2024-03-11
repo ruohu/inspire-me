@@ -11,18 +11,14 @@ const RandomQuoteContainer: FC = () => {
   const { data, isLoading, error, fetchData } = useFetch<RandomQuoteData>(quotesApi.RANDOM);
   const [quoteData, setQuoteData] = useState<Quote | null>(null);
 
-  //  TEST
-  // const data = null;
-  // const isLoading = false;
-  // const error = false;
-
   useEffect(() => {
     if (data) {
       setQuoteData({
         id: data._id,
         content: data.content,
         author: data.author,
-        tags: data.tags
+        tags: data.tags,
+        note: ""
       });
     }
   }, [data]);
