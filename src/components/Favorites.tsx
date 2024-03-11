@@ -16,7 +16,7 @@ const Favorites: FC<Props> = ({ favorites }) => {
         width: "100%",
         textAlign: "center",
         py: 5,
-        px: 3,
+        px: 4,
         bgcolor: "secondary.main"
       }}
     >

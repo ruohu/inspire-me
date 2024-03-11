@@ -1,4 +1,4 @@
-import { useScrollTrigger, Fade, Box, Slide } from "@mui/material";
+import { useScrollTrigger, Fade, Box } from "@mui/material";
 import { ReactElement } from "react";
 
 type Props = {
@@ -16,11 +16,11 @@ function ScrollTop(props: Props) {
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const anchor = (
       (event.target as HTMLDivElement).ownerDocument || document
-    ).querySelector('#back-to-top-anchor');
+    ).querySelector("#back-to-top-anchor");
 
     if (anchor) {
       anchor.scrollIntoView({
-        block: 'center',
+        block: "center",
       });
     }
   };
@@ -31,7 +31,7 @@ function ScrollTop(props: Props) {
       <Box
         onClick={handleClick}
         role="presentation"
-        sx={{ position: 'fixed', bottom: 16, right: 16 }}
+        sx={{ position: "fixed", bottom: 16, right: 16 }}
       >
         {children}
       </Box>

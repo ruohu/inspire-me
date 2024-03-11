@@ -1,7 +1,7 @@
-import { Box, IconButton, TextField, Tooltip } from '@mui/material'
-import EditIcon from '@mui/icons-material/Edit';
-import DoneIcon from '@mui/icons-material/Done';
-import { ChangeEvent, FC } from 'react';
+import { Box, IconButton, TextField, Tooltip } from "@mui/material"
+import EditIcon from "@mui/icons-material/Edit";
+import DoneIcon from "@mui/icons-material/Done";
+import { ChangeEvent, FC } from "react";
 
 type Props = {
   isEditing: boolean,
@@ -25,6 +25,7 @@ const CardNote: FC<Props> = ({
         sx={{ width: "95%" }}
         label="My note"
         multiline
+        maxRows={5}
         value={note}
         onChange={(e: ChangeEvent<HTMLTextAreaElement>) => { setNote(e.target.value) }}
         disabled={!isEditing}

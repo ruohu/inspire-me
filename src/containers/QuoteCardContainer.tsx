@@ -1,8 +1,8 @@
-import { FC, useEffect, useState } from 'react'
-import { useQuotes, useQuotesDispatch } from '../context/QuotesContext';
-import { QuotesActionType } from '../models/enums/QuoteActionsType';
-import { Quote } from '../models/types/Quote';
-import QuoteCard from '../components/QuoteCard';
+import { FC, useEffect, useState } from "react"
+import { useQuotes, useQuotesDispatch } from "../context/QuotesContext";
+import { QuotesActionType } from "../models/enums/QuoteActionsType";
+import { Quote } from "../models/types/Quote";
+import QuoteCard from "../components/QuoteCard";
 
 type Props = {
   quote: Quote;

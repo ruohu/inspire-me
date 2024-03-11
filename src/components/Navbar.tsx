@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography, Button, Link } from "@mui/material";
 import { useQuotes } from "../context/QuotesContext";
+
 const Navbar = () => {
 
   const { totFavorites } = useQuotes();

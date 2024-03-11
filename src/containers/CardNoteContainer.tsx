@@ -1,7 +1,7 @@
-import { FC, useState } from 'react'
-import { QuotesActionType } from '../models/enums/QuoteActionsType';
-import { useQuotesDispatch } from '../context/QuotesContext';
-import CardNote from '../components/CardNote';
+import { FC, useState } from "react"
+import { QuotesActionType } from "../models/enums/QuoteActionsType";
+import { useQuotesDispatch } from "../context/QuotesContext";
+import CardNote from "../components/CardNote";
 
 type Props = {
   quoteId: string;

@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { Card, CardActions, CardContent, IconButton, Snackbar, Tooltip, Typography } from "@mui/material";
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteFilledIcon from '@mui/icons-material/Favorite';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { Card, CardActions, CardContent, IconButton, Snackbar, SnackbarContent, Tooltip, Typography } from "@mui/material";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteFilledIcon from "@mui/icons-material/Favorite";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Quote } from "../models/types/Quote";
 import CardNoteContainer from "../containers/CardNoteContainer";
 
@@ -33,7 +33,8 @@ const QuoteCard: FC<Props> = ({
       height: "100%",
       p: 2,
       textAlign: "center",
-      display: "flex"
+      display: "flex",
+      justifyContent: "center"
     }}>
       <CardContent sx={{
         display: "flex",
@@ -64,14 +65,17 @@ const QuoteCard: FC<Props> = ({
               <ContentCopyIcon></ContentCopyIcon>
             </IconButton>
           </Tooltip>
-
           <Snackbar
             open={openSnackbar}
             onClose={handleCloseSnackbar}
             autoHideDuration={5000}
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-            message="Copied to clipboard!"
-          />
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          >
+            <SnackbarContent
+              sx={{ display: "block", textAlign: "center" }}
+              message={"Copied to clipboard"}
+            />
+          </ Snackbar>
         </CardActions>
         {
           enableNote

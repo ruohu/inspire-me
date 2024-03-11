@@ -1,7 +1,7 @@
-import { FC } from 'react'
-import { Quote } from '../models/types/Quote';
-import QuoteCardContainer from '../containers/QuoteCardContainer';
-import { Grid } from '@mui/material';
+import { FC } from "react"
+import { Quote } from "../models/types/Quote";
+import QuoteCardContainer from "../containers/QuoteCardContainer";
+import { Grid } from "@mui/material";
 
 type Props = {
   quotes: Quote[];
