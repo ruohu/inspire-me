@@ -1,30 +1,66 @@
-# React + TypeScript + Vite
+# Inspire Me
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About The Project
 
-## Expanding the ESLint configuration
+A simple React application that generate random quotes and allows users to add their favorites quotes.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Built With
 
-- Configure the top-level `parserOptions` property like this:
+* [Vite](https://vitejs.dev/)
+* [React](https://react.dev/)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+
+## Getting Started
+
+Follow these simple steps to get a local copy and run it.
+
+### Prerequisites
+
+Running the application requires [Node](https://nodejs.org/en/) to be installed on your operating system.
+
+You can install the latest version of npm from your terminal with the following command:
+```sh
+  npm install npm@latest -g
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Installation
+
+1. Clone the repo locally with git clone command
+   ```sh
+    git clone https://github.com/ruohu/inspire-me.git
+   ```
+2. Install NPM packages
+   ```sh
+    npm install
+   ```
+3. Run the app
+   ```sh
+    npm run dev
+   ```
+
+
+## License
+
+Distributed under the MIT License.
