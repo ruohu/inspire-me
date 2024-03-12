@@ -5,7 +5,7 @@ import QuoteCardContainer from "../containers/QuoteCardContainer";
 
 type Props = {
   quote: Quote | null;
-  refetch: () => Promise<void>
+  refetch: () => Promise<void> // void
 }
 
 const RandomQuote: FC<Props> = ({ quote, refetch }) => {
