@@ -18,6 +18,7 @@
       </ul>
     </li>
     <li><a href="#license">License</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -68,3 +69,8 @@ You can install the latest version of npm from your terminal with the following 
 ## License
 
 Distributed under the MIT License.
+
+
+## Acknowledgements
+
+* [Quotable API](https://docs.quotable.io/docs/api)
