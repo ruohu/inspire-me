@@ -31,6 +31,8 @@ A small React application that generate random quotes and allows users to add th
 
 * [Vite](https://vitejs.dev/)
 * [React](https://react.dev/)
+* [Material UI](https://mui.com/material-ui/)
+
 
 
 ## Getting Started
