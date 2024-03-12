@@ -19,6 +19,6 @@ export const theme = createTheme({
 
   },
   typography: {
-    fontFamily: "Lato",
+    fontFamily: "Helvetica",
   },
 });
