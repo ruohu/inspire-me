@@ -27,6 +27,8 @@
 
 A small React application that generate random quotes and allows users to add their favorites quotes.
 
+Live demo [here](https://inspireme-rh.netlify.app/)
+
 ### Built With
 
 * [Vite](https://vitejs.dev/)
