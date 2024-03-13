@@ -3,6 +3,7 @@ import { useQuotes, useQuotesDispatch } from "../context/QuotesContext";
 import { QuotesActionType } from "../models/enums/QuoteActionsType";
 import { Quote } from "../models/types/Quote";
 import QuoteCard from "../components/QuoteCard";
+import CardNoteContainer from "./CardNoteContainer";
 
 type Props = {
   quote: Quote;
@@ -55,7 +56,9 @@ const QuoteCardContainer: FC<Props> = ({
       removeFavorite={removeFavorite}
       handleCopyClick={handleCopyClick}
       handleCloseSnackbar={handleCloseSnackbar}
-    />
+    >
+      <CardNoteContainer quoteId={quote.id} />
+    </QuoteCard>
   )
 }
 

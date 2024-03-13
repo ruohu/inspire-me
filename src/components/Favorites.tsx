@@ -1,13 +1,13 @@
 import { Box, Typography } from "@mui/material";
-import { FC } from "react";
+import { FC, ReactElement } from "react";
 import { Quote } from "../models/types/Quote";
-import QuoteCardList from "./QuoteCardList";
 
 type Props = {
   favorites: Quote[];
+  children: ReactElement;
 }
 
-const Favorites: FC<Props> = ({ favorites }) => {
+const Favorites: FC<Props> = ({ favorites, children }) => {
 
   return (
     <Box
@@ -22,7 +22,7 @@ const Favorites: FC<Props> = ({ favorites }) => {
     >
       <Typography variant="h2" sx={{ my: 3 }}>My Favorites</Typography>
       {(favorites?.length > 0)
-        ? <QuoteCardList quotes={favorites} enableNote={true} />
+        ? <> {children} </>
         : <Typography> No favorites quotes</Typography>
       }
     </Box>

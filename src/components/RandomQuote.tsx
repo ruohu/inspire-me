@@ -1,14 +1,12 @@
-import { FC } from "react";
+import { FC, ReactElement } from "react";
 import { Box, Button, Typography } from "@mui/material";
-import { Quote } from "../models/types/Quote";
-import QuoteCardContainer from "../containers/QuoteCardContainer";
 
 type Props = {
-  quote: Quote | null;
-  refetch: () => Promise<void>
+  refetch: () => Promise<void>;
+  children: ReactElement;
 }
 
-const RandomQuote: FC<Props> = ({ quote, refetch }) => {
+const RandomQuote: FC<Props> = ({ refetch, children }) => {
 
   return (
     <Box sx={{
@@ -22,9 +20,7 @@ const RandomQuote: FC<Props> = ({ quote, refetch }) => {
     }}>
       <Typography variant="h2">Random Quote</Typography>
       <Box sx={{ p: 2, width: "80%" }}>
-        {quote &&
-          <QuoteCardContainer quote={quote} />
-        }
+        {children}
       </Box>
       <Button
         variant="contained"

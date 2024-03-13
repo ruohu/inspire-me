@@ -1,16 +1,16 @@
-import { FC } from "react";
+import { FC, ReactElement } from "react";
 import { Card, CardActions, CardContent, IconButton, Snackbar, SnackbarContent, Tooltip, Typography } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteFilledIcon from "@mui/icons-material/Favorite";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Quote } from "../models/types/Quote";
-import CardNoteContainer from "../containers/CardNoteContainer";
 
 type Props = {
   quote: Quote;
   isFavorite: boolean;
   openSnackbar: boolean;
   enableNote?: boolean;
+  children: ReactElement;
   addFavorite: (quote: Quote) => void;
   removeFavorite: (id: string) => void;
   handleCopyClick: (content: string, author: string) => void;
@@ -22,6 +22,7 @@ const QuoteCard: FC<Props> = ({
   isFavorite,
   openSnackbar,
   enableNote = false,
+  children,
   addFavorite,
   removeFavorite,
   handleCopyClick,
@@ -79,7 +80,7 @@ const QuoteCard: FC<Props> = ({
         </CardActions>
         {
           enableNote
-          && <CardNoteContainer quoteId={quote.id} />
+          && <>{children}</>
         }
       </CardContent >
     </Card >

@@ -6,6 +6,7 @@ import Loading from "../components/Loading";
 import ErrorMessage from "../components/ErrorMessage";
 import { Quote } from "../models/types/Quote";
 import { RandomQuoteData } from "../models/interfaces/RandomQuoteData";
+import QuoteCardContainer from "./QuoteCardContainer";
 
 const RandomQuoteContainer: FC = () => {
   const { data, isLoading, error, fetchData } = useFetch<RandomQuoteData>(quotesApi.RANDOM);
@@ -29,7 +30,12 @@ const RandomQuoteContainer: FC = () => {
         : error
           ? <ErrorMessage />
           : data
-          && <RandomQuote quote={quoteData} refetch={fetchData} />
+          &&
+          (
+            <RandomQuote refetch={fetchData} >
+              {quoteData ? <QuoteCardContainer quote={quoteData} /> : <></>}
+            </RandomQuote>
+          )
       }
     </>
   )
